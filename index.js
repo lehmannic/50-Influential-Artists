@@ -263,19 +263,30 @@ function removeArtist(someArray, indexToDelete) {
 
 /* Task 5: Create a function called get20s() that takes data as an argument and returns an array with names of artists who were born the 20th century (1800-1900) */
 
-function get20s(/* Code here */){
 
-    /* Code here */
-
+function get20s(someArray){
+  const array20th = []; 
+  for (i=0; i<someArray.length; i++){
+    let birthYear = someArray[i].years.slice(0,4);
+    if (birthYear >= 1800 && birthYear <= 1900) {
+      array20th.push(someArray[i]); 
+    }
   }
+  return array20th;
+}
+
 
 /* Task 6: Create a function called lotsOfArt() that takes artists as an argument and returns an array with names of artists who painted more than 100 paintings */
 
-function lotsOfArt(/* Code here */){
-
-    /* Code here */
-
+function lotsOfArt(someArray){
+  const lotsArray = [];
+  for (i=0; i<someArray.length; i++){
+    if (someArray[i].paintings > 100){
+      lotsArray.push(someArray[i]);
+    }
   }
+  return lotsArray; 
+}
 
 
 /* Task 7: Create a function called `addArtist` that can accept an array of information and add it to the artists array. Then, Add a 21st artist to the array (you) with custom information! 👩‍🎨👨‍🎨
