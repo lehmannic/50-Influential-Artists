@@ -298,23 +298,35 @@ genre: Web Design,
 nationality: Your Nationality Here
 bio: Add 1-2 sentences (or use lorem ipsum) "*/
 
-function addArtist(/* Code here */){
 
-    /* Code here */
+function addArtist([id, name, years, genre, nationality, bio]) {
+  artists.push({id, name, years, genre, nationality, bio
+  }); 
+}
 
-  }
-
+addArtist (
+  ["21", 
+  "Nic",
+  "1993 - current day",
+  "Web Design",
+  "American",
+  "Sint excepteur officia reprehenderit minim reprehenderit proident ipsum mollit aliqua proident enim laboris excepteur cillum. In tempor do eu duis consectetur proident cillum laboris nisi anim elit voluptate sunt laborum. Aliquip nostrud culpa do amet reprehenderit quis sint et minim voluptate. Incididunt Lorem officia laborum voluptate est do. Adipisicing labore voluptate id eiusmod mollit."
+  ]
+  )
 
 /* Task 8: Create a function called `checkArtist` that accepts a string (name of an artist) and checks if that artist is in the dataset. */
 
-function checkArtist(/* Code here */){
-
-    /* Code here */
-
+function checkArtist(nameString){
+  let includesName = false; 
+  let howMany = 0; 
+  for(i=0; i<artists.length; i++){
+    // I used <string>.includes(<string>) so you can search first names, last names, etc 
+    if (((artists[i].name)).includes(nameString)) {
+      includesName = true;  
+    }
   }
-
-
-
+  return includesName; 
+}
 
 
 // 🎨🎨 STRETCH 🎨🎨//
