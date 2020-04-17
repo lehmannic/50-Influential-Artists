@@ -1,3 +1,17 @@
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Raleway'), local('Raleway-Regular'), url(https://fonts.gstatic.com/s/raleway/v14/1Ptug8zYS_SKggPN-Co.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Raleway Bold'), local('Raleway-Bold'), url(https://fonts.gstatic.com/s/raleway/v14/1Ptrg8zYS_SKggPNwJYtaqE.ttf) format('truetype');
+}
 .testBorder {
   border: 1px solid red;
 }
@@ -98,6 +112,7 @@ video {
 }
 html {
   font-size: 62.5%;
+  font-family: 'Raleway', sans-serif;
 }
 body {
   margin: 0 2%;
@@ -105,15 +120,25 @@ body {
   font-size: 1.5rem;
   display: flex;
   flex-direction: column;
+  line-height: 1.5;
+}
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1;
 }
 header {
   width: 100%;
   margin-top: 1%;
   display: flex;
-  justify-content: space-around;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 nav {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   width: 50%;
@@ -134,19 +159,21 @@ nav div {
   background-attachment: fixed;
   background-position: center;
   display: flex;
+  flex-direction: row;
   justify-content: center;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
 }
 .title-container h1 {
+  width: 40%;
   color: white;
-  font-size: 4rem;
+  font-size: 5rem;
   margin-bottom: 1%;
 }
 .title-container .buttonContainer {
-  width: 22%;
+  width: 20%;
 }
-.title-container button {
+.title-container .btn {
   font-size: 2rem;
   width: 100%;
   background-color: white;
@@ -155,14 +182,18 @@ nav div {
 }
 .artists-container {
   display: flex;
+  flex-direction: row;
   justify-content: center;
+  align-items: start;
 }
 .artists-container .artist {
   width: 40%;
   margin: 2.5%;
   display: flex;
   flex-direction: column;
+  justify-content: start;
   align-items: center;
+  align-content: flex-start;
 }
 .artists-container .artist img {
   width: 75%;
