@@ -136,33 +136,32 @@ header {
   justify-content: center;
   align-items: center;
 }
-nav {
+header nav {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   width: 50%;
 }
-nav a {
+header nav a {
   font-size: 2rem;
   margin: 2%;
   color: black;
   text-decoration: none;
 }
-nav div {
+header nav div {
   font-size: 3rem;
 }
 .title-container {
   height: 75vh;
-  background-image: url(/assets/home.png);
+  background-image: url(../assets/home.png);
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
 }
 .title-container h1 {
   width: 40%;
