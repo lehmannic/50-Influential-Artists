@@ -208,9 +208,19 @@ const artists = [
 (1) Name of the first artist in the array
 (2) Bio of the third artist in the array */
 
+console.log(artists[0]);  // (1)
+
+console.log(artists[2].bio); // (2)
+
 
 
 /* Task 2: There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
+
+// console.log(`${artists[8].name} is name before switch`)
+artists[8].name = "Vincent Van Gogh"; // this is how you make the change
+// console.log(artists[8].name);
+
+
 
 
 
@@ -222,9 +232,11 @@ const artists = [
  * For example, if getArtistByIndex is invoked with the inventory and the number 0,
  * it will return `The artist at index 0 is Amedeo Modigliani`.
 */
-function getArtistByIndex(id, name) {
-    /* code here */
+function getArtistByIndex(id, index) {
+    return `The artist at index ${index} is ${id[index].name}`
   }
+
+  // console.log(getArtistByIndex(artists, 0)); // this is me testing my code
   
   /**
 
@@ -237,28 +249,44 @@ function getArtistByIndex(id, name) {
  * For example, if removeArtist is invoked with the data and the number 0,
  * it will remove Amedeo Modigliani from our dataset.
 */
-function removeArtist(/*code here*/) {
-    /* code here */
+function removeArtist(someArray, indexToDelete) {
+  return someArray.splice(indexToDelete, 1); 
+
   }
+
+  // console.log(artists[0]); 
+  // removeArtist(artists, 0);
+  // console.log(artists[0]);
   
   /**
 
 
 /* Task 5: Create a function called get20s() that takes data as an argument and returns an array with names of artists who were born the 20th century (1800-1900) */
 
-function get20s(/* Code here */){
 
-    /* Code here */
-
+function get20s(someArray){
+  const array20th = []; 
+  for (i=0; i<someArray.length; i++){
+    let birthYear = someArray[i].years.slice(0,4);
+    if (birthYear >= 1800 && birthYear <= 1900) {
+      array20th.push(someArray[i]); 
+    }
   }
+  return array20th;
+}
+
 
 /* Task 6: Create a function called lotsOfArt() that takes artists as an argument and returns an array with names of artists who painted more than 100 paintings */
 
-function lotsOfArt(/* Code here */){
-
-    /* Code here */
-
+function lotsOfArt(someArray){
+  const lotsArray = [];
+  for (i=0; i<someArray.length; i++){
+    if (someArray[i].paintings > 100){
+      lotsArray.push(someArray[i]);
+    }
   }
+  return lotsArray; 
+}
 
 
 /* Task 7: Create a function called `addArtist` that can accept an array of information and add it to the artists array. Then, Add a 21st artist to the array (you) with custom information! 👩‍🎨👨‍🎨
@@ -270,23 +298,35 @@ genre: Web Design,
 nationality: Your Nationality Here
 bio: Add 1-2 sentences (or use lorem ipsum) "*/
 
-function addArtist(/* Code here */){
 
-    /* Code here */
+function addArtist([id, name, years, genre, nationality, bio]) {
+  artists.push({id, name, years, genre, nationality, bio
+  }); 
+}
 
-  }
-
+addArtist (
+  ["21", 
+  "Nic",
+  "1993 - current day",
+  "Web Design",
+  "American",
+  "Sint excepteur officia reprehenderit minim reprehenderit proident ipsum mollit aliqua proident enim laboris excepteur cillum. In tempor do eu duis consectetur proident cillum laboris nisi anim elit voluptate sunt laborum. Aliquip nostrud culpa do amet reprehenderit quis sint et minim voluptate. Incididunt Lorem officia laborum voluptate est do. Adipisicing labore voluptate id eiusmod mollit."
+  ]
+  )
 
 /* Task 8: Create a function called `checkArtist` that accepts a string (name of an artist) and checks if that artist is in the dataset. */
 
-function checkArtist(/* Code here */){
-
-    /* Code here */
-
+function checkArtist(nameString){
+  let includesName = false; 
+  let howMany = 0; 
+  for(i=0; i<artists.length; i++){
+    // I used <string>.includes(<string>) so you can search first names, last names, etc 
+    if (((artists[i].name)).includes(nameString)) {
+      includesName = true;  
+    }
   }
-
-
-
+  return includesName; 
+}
 
 
 // 🎨🎨 STRETCH 🎨🎨//
